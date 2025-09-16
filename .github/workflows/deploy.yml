@@ -3,14 +3,14 @@ name: Deploy Vue2 App to GitHub Pages
 on:
   push:
     branches:
-      - main   # 👈 改成你仓库的默认分支（main/master）
+      - main   # ⚠️ 改成你的默认分支
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Setup Node.js
@@ -29,3 +29,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          force_orphan: true    # ⚠️ 自动覆盖 gh-pages 分支
