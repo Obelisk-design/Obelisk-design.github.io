@@ -1,6 +1,6 @@
 // vue.config.js
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production'
-    ? '/obelisk-design/'  // 项目站点写仓库名
+    ? '/Obelisk-design/'   // ⚠️ 改成你的仓库名（区分大小写）
     : '/'
 }
